@@ -1,0 +1,7 @@
+title: AI Zettelkasten
+description: Public Obsidian-style notes mirrored from Quartz
+theme: jekyll-theme-cayman
+markdown: kramdown
+exclude:
+  - scripts
+  - content
