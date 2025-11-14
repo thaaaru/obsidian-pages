@@ -6,7 +6,8 @@ This repository is a GitHub Pages–ready wrapper around your Quartz build outpu
 1. Make sure the sibling `quartz/` workspace is up to date and contains your Obsidian-style Markdown inside `quartz/content/`.
 2. From `quartz/`, run `npm run quartz -- build` (or `npm run docs`) to generate the static site into `quartz/docs/`.
 3. Back in this repo, run `./scripts/sync-from-quartz.sh` to copy the latest `docs/` output here.
-4. Commit and push to your GitHub Pages repository (`username.github.io` or project pages). In the Pages settings, point the source to the `main` branch and `/docs` folder.
+4. Optionally run `node scripts/generate-index.mjs` to rebuild `docs/index.html` so the homepage reflects any new or renamed notes. This script scans all Markdown files and produces a bidirectional-link view inspired by Obsidian.
+5. Commit and push to your GitHub Pages repository (`username.github.io` or project pages). In the Pages settings, point the source to the `main` branch and `/docs` folder.
 
 ## Repository Layout
 - `content/`: Optional staged notes you want to keep inside your Pages repo (handy if you publish raw Markdown alongside the built site).
