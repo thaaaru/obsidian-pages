@@ -1,0 +1,33 @@
+<svg width="920" height="360" viewBox="0 0 920 360" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 20px 'Helvetica', sans-serif; fill: #111; }
+    .box { fill: #fef6e7; stroke: #f39c12; stroke-width: 2px; rx: 12px; }
+    .label { font: 13px 'Helvetica', sans-serif; fill: #7a4b00; }
+    .arrow { stroke: #d35400; stroke-width: 3px; fill: none; marker-end: url(#arrowhead); }
+    .note { font: 12px 'Helvetica', sans-serif; fill: #444; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#d35400" />
+    </marker>
+  </defs>
+  <text x="460" y="35" text-anchor="middle" class="title">Sri Lanka Gov Service Copilot Flow</text>
+  <rect class="box" x="40" y="90" width="180" height="90" />
+  <text class="label" x="130" y="135" text-anchor="middle">Citizen Intake (SMS/Web/Walk-in)</text>
+  <rect class="box" x="260" y="70" width="180" height="110" />
+  <text class="label" x="350" y="115" text-anchor="middle">Document Digitization &amp; OCR</text>
+  <rect class="box" x="480" y="70" width="180" height="110" />
+  <text class="label" x="570" y="115" text-anchor="middle">RAG Policy Copilot</text>
+  <rect class="box" x="700" y="90" width="180" height="90" />
+  <text class="label" x="790" y="135" text-anchor="middle">Case Management &amp; Escalation</text>
+  <rect class="box" x="360" y="220" width="200" height="100" />
+  <text class="label" x="460" y="260" text-anchor="middle">Observability Dashboard (KPIs, audits)</text>
+  <line class="arrow" x1="220" y1="135" x2="260" y2="120" />
+  <line class="arrow" x1="440" y1="120" x2="480" y2="120" />
+  <line class="arrow" x1="660" y1="120" x2="700" y2="135" />
+  <line class="arrow" x1="130" y1="180" x2="400" y2="270" />
+  <line class="arrow" x1="570" y1="180" x2="460" y2="220" />
+  <line class="arrow" x1="790" y1="180" x2="500" y2="270" />
+  <text class="note" x="130" y="210" text-anchor="middle">Multilingual logging</text>
+  <text class="note" x="570" y="205" text-anchor="middle">Feedback loops &amp; drift alerts</text>
+</svg>

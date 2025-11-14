@@ -1,0 +1,32 @@
+<svg width="920" height="420" viewBox="0 0 920 420" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 20px 'Helvetica', sans-serif; fill: #0e1a2a; }
+    .subtitle { font: italic 13px 'Helvetica', sans-serif; fill: #0e1a2a; }
+    .bubble { fill: #f0f5ff; stroke: #3d6dff; stroke-width: 2px; rx: 14px; }
+    .label { font: 14px 'Helvetica', sans-serif; fill: #132a5c; }
+    .line { stroke: #7a8fbf; stroke-width: 2px; }
+  </style>
+  <text x="460" y="35" text-anchor="middle" class="title">AI Risk Classes &amp; Primary Controls</text>
+  <text x="460" y="60" text-anchor="middle" class="subtitle">Map each hazard family to the first control layer Sri Lanka deployments should activate</text>
+  <line class="line" x1="460" y1="80" x2="460" y2="390" />
+
+  <rect class="bubble" x="80" y="90" width="260" height="90" />
+  <text class="label" x="210" y="130" text-anchor="middle">Safety / Alignment</text>
+  <text class="label" x="210" y="155" text-anchor="middle">Controls: eval harnesses, red teams</text>
+
+  <rect class="bubble" x="580" y="90" width="260" height="90" />
+  <text class="label" x="710" y="130" text-anchor="middle">Security / Abuse</text>
+  <text class="label" x="710" y="155" text-anchor="middle">Controls: SBOMs, penetration testing</text>
+
+  <rect class="bubble" x="80" y="210" width="260" height="90" />
+  <text class="label" x="210" y="250" text-anchor="middle">Fairness / Societal</text>
+  <text class="label" x="210" y="275" text-anchor="middle">Controls: bias audits, public dialogue</text>
+
+  <rect class="bubble" x="580" y="210" width="260" height="90" />
+  <text class="label" x="710" y="250" text-anchor="middle">Operational / Resilience</text>
+  <text class="label" x="710" y="275" text-anchor="middle">Controls: SLOs, incident response</text>
+
+  <rect class="bubble" x="330" y="320" width="260" height="80" />
+  <text class="label" x="460" y="355" text-anchor="middle">Documentation &amp; Accountability</text>
+  <text class="label" x="460" y="380" text-anchor="middle">Controls: model cards, governance forums</text>
+</svg>
