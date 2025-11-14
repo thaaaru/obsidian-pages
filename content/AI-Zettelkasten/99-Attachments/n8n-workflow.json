@@ -1,0 +1,112 @@
+{
+  "name": "AI Zettelkasten Auto Note",
+  "nodes": [
+    {
+      "id": "1",
+      "name": "Trigger",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [200, 300],
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "hour": 4,
+              "minute": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "2",
+      "name": "Read CSV",
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [420, 300],
+      "parameters": {
+        "filePath": "AI-Zettelkasten/99-Attachments/bulk-notes.csv"
+      }
+    },
+    {
+      "id": "3",
+      "name": "Parse CSV",
+      "type": "n8n-nodes-base.csvFile",
+      "typeVersion": 1,
+      "position": [640, 300],
+      "parameters": {
+        "options": {
+          "delimiter": ",",
+          "encoding": "utf8"
+        }
+      }
+    },
+    {
+      "id": "4",
+      "name": "Build Markdown",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [860, 300],
+      "parameters": {
+        "functionCode": "return items.map(item => {\n  const data = item.json;\n  const content = `---\\ntitle: ${data.title}\\nid: ${data.id}\\ntags: [${data.tags}]\\ncreated: ${new Date().toISOString().split('T')[0]}\\nupdated:\\n---\\n\\n**Definition**\\n- ${data.definition}\\n\\n**Key Ideas**\\n- ${data.keyIdea1}\\n- ${data.keyIdea2}\\n\\n**Related Notes**\\n- [[${data.related1}]]\\n- [[${data.related2}]]\\n\\n**Further Expansion**\\n- ${data.expansion1}\\n- ${data.expansion2}`;\n  item.json = {\n    folder: data.folder,\n    filename: `${data.id} ${data.title}.md`,\n    content\n  };\n  return item;\n});"
+      }
+    },
+    {
+      "id": "5",
+      "name": "Write Note",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [1080, 300],
+      "parameters": {
+        "filePath": "={{$json.folder + '/' + $json.filename}}",
+        "dataPropertyName": "data"
+      }
+    }
+  ],
+  "connections": {
+    "Trigger": {
+      "main": [
+        [
+          {
+            "node": "Read CSV",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read CSV": {
+      "main": [
+        [
+          {
+            "node": "Parse CSV",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse CSV": {
+      "main": [
+        [
+          {
+            "node": "Build Markdown",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Markdown": {
+      "main": [
+        [
+          {
+            "node": "Write Note",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

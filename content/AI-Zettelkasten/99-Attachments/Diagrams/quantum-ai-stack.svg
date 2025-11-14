@@ -1,0 +1,40 @@
+<svg width="920" height="420" viewBox="0 0 920 420" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 20px 'Helvetica', sans-serif; fill: #120b2b; }
+    .box { fill: #f3e8ff; stroke: #7a3df0; stroke-width: 2px; rx: 12px; }
+    .label { font: 14px 'Helvetica', sans-serif; fill: #2c0a66; }
+    .arrow { stroke: #7a3df0; stroke-width: 3px; fill: none; marker-end: url(#arrowhead); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7a3df0" />
+    </marker>
+  </defs>
+  <text x="460" y="35" text-anchor="middle" class="title">Quantum-Accelerated AI Stack</text>
+
+  <rect class="box" x="120" y="90" width="220" height="80" />
+  <text class="label" x="230" y="130" text-anchor="middle">Classical Data / Feature Lake</text>
+
+  <rect class="box" x="120" y="210" width="220" height="80" />
+  <text class="label" x="230" y="250" text-anchor="middle">Hybrid Orchestrator (PyTorch + Qiskit)</text>
+
+  <rect class="box" x="120" y="330" width="220" height="60" />
+  <text class="label" x="230" y="365" text-anchor="middle">Operational APIs / Agents</text>
+
+  <rect class="box" x="420" y="150" width="180" height="100" />
+  <text class="label" x="510" y="200" text-anchor="middle">Quantum Circuits (NISQ)</text>
+
+  <rect class="box" x="640" y="150" width="180" height="100" />
+  <text class="label" x="730" y="190" text-anchor="middle">Quantum Simulators / Emulators</text>
+
+  <rect class="box" x="420" y="290" width="400" height="80" />
+  <text class="label" x="620" y="330" text-anchor="middle">Monitoring &amp; Scheduling (Braket, Pennylane, cuQuantum)</text>
+
+  <line class="arrow" x1="230" y1="170" x2="230" y2="210" />
+  <line class="arrow" x1="230" y1="290" x2="230" y2="330" />
+  <line class="arrow" x1="340" y1="250" x2="420" y2="220" />
+  <line class="arrow" x1="600" y1="200" x2="640" y2="200" />
+  <line class="arrow" x1="510" y1="250" x2="620" y2="290" />
+  <line class="arrow" x1="730" y1="250" x2="730" y2="290" />
+  <line class="arrow" x1="620" y1="370" x2="230" y2="370" />
+</svg>
