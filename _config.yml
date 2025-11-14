@@ -1,7 +1,9 @@
-title: AI Zettelkasten
-description: Public Obsidian-style notes mirrored from Quartz
-theme: jekyll-theme-cayman
+theme: jekyll-theme-minimal
+title: Tharaka's homepage
+description: Bookmark this to keep an eye on my project updates!
 markdown: kramdown
 exclude:
   - scripts
   - content
+
+
